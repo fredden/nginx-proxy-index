@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  web:
+    image: nginx:alpine
+    environment:
+      VIRTUAL_HOST: localhost
+    volumes:
+      - ./pub:/usr/share/nginx/html:ro
+
+  generator:
+    image: jwilder/docker-gen
+    command: -watch /app/template.go /app/pub/index.html
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./template.go:/app/template.go:ro
+      - ./pub:/app/pub:cached
+
+networks:
+  default:
+    external:
+      name: ${NETWORK:-webproxy}
