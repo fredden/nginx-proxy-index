@@ -4,7 +4,7 @@ services:
   web:
     image: nginx:alpine
     environment:
-      VIRTUAL_HOST: localhost
+      VIRTUAL_HOST: ${DEFAULT_HOST:-localhost}
     volumes:
       - ./pub:/usr/share/nginx/html:ro
 
