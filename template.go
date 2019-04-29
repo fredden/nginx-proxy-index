@@ -17,5 +17,6 @@
     {{ end }}
     </ul>
   </main>
+  <!-- https://github.com/fredden/nginx-proxy-index -->
 </body>
 </html>
