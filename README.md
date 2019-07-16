@@ -38,5 +38,5 @@ The docker network where websites are discoverable.
 docker-compose up -d
 
 # Stop the service
-docker-compose down
+docker-compose down -v
 ```

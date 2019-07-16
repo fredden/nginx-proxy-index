@@ -5,16 +5,19 @@ services:
     image: nginx:alpine
     environment:
       VIRTUAL_HOST: ${DEFAULT_HOST:-localhost}
+    depends_on:
+      - generator
     volumes:
-      - ./pub:/usr/share/nginx/html:ro
+      - pub:/usr/share/nginx/html:ro
 
   generator:
-    image: jwilder/docker-gen
-    command: -watch /app/template.go /app/pub/index.html
+    build: generator
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./template.go:/app/template.go:ro
-      - ./pub:/app/pub:cached
+      - pub:/app/pub:delegated
+
+volumes:
+  pub:
 
 networks:
   default:
