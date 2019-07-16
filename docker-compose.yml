@@ -2,9 +2,10 @@ version: '3'
 services:
 
   web:
-    image: nginx:alpine
+    build: web
     environment:
       VIRTUAL_HOST: ${DEFAULT_HOST:-localhost}
+      CERT_NAME: default
     depends_on:
       - generator
     volumes:
