@@ -3,6 +3,37 @@
 <head>
   <title>nginx-proxy-index</title>
   <meta http-equiv="refresh" content="60">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=blocker" rel="stylesheet">
+  <style type="text/css">
+    body {
+      font-family: Poppins, Helvetica, sans-serif;
+    }
+    h1 {
+      font-family: Poppins, Verdana, courier, sans-serif;
+    }
+    a:hover {
+      background-color: #ededed;
+    }
+    a {
+      border-radius: 0.4rem;
+      color: inherit;
+      display: inline-block;
+      height: 1.8rem;
+      line-height: 1.8rem;
+      padding: 0 0.4rem;
+      text-decoration: none;
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #303133;
+        color: #ffffff;
+      }
+      a:hover {
+        background-color: #777777;
+      }
+    }
+  </style>
 </head>
 <body>
   <main>
